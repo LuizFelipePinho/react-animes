@@ -54,6 +54,8 @@ body {
   
 }
 
+
+
 .formulario input {
   width: 26rem;
   height: 1.7rem;
@@ -116,12 +118,16 @@ input:focus{
 
 }
 
+.formulario button:hover {
+  background-color: rgba(91, 236, 91, 0.747);
+  cursor: pointer;
+}
+
 .adicionaAnime {
   margin-top: 5rem;
   padding: 1.2rem;
   font-size: 1rem;
   background-color: rgba(91, 236, 91, 0.747);
-  color:black;
   border: none;
 
 }
