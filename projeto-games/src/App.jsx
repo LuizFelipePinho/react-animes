@@ -33,14 +33,18 @@ export default function App() {
   ]);
 
   const [nomeAnime, setNomeAnime] = useState("");
+  const [generoAnime, setGeneroAnime] = useState("");
   const [imagemUrlAnime, setUrlAnime] = useState("");
 
   const [editando, setEditando] = useState(false);
   const [indiceEditando, setIndiceEditando] = useState(null);
+  const [formularioAtivo, ativaFormulario] = useState(false);
 
+  // ele fica ouvindo se editar foi acionado, se for ele vai devolver para o input o elemento q foi selecionado
   useEffect(() => {
     if (indiceEditando !== null && editando) {
       setNomeAnime(animes[indiceEditando].nome);
+      setGeneroAnime(animes[indiceEditando].genero)
       setUrlAnime(animes[indiceEditando].imagemUrl);
     }
   }, [indiceEditando]);
@@ -49,6 +53,11 @@ export default function App() {
     setNomeAnime(evento.target.value);
     console.log(evento.target.value);
   };
+
+  const atualizaGeneroAnime = (evento) => {
+    setGeneroAnime(evento.target.value);
+    console.log(evento.target.value);
+  }
 
   const atualizarUrlAnime = (evento) => {
     setUrlAnime(evento.target.value);
@@ -60,14 +69,13 @@ export default function App() {
   };
 
 
-
   const verificaExisteAnime = () =>
     animes.some(
-      (anime) => anime.nome === nomeAnime && anime.imagemUrl === imagemUrlAnime
+      (anime) => anime.nome === nomeAnime && anime.genero === generoAnime && anime.imagemUrl === imagemUrlAnime
     );
 
   const verificaInputVazio = () =>{
-    if(!nomeAnime || !imagemUrlAnime){
+    if(!nomeAnime || !generoAnime || !imagemUrlAnime){
       return true
     }
   }
@@ -79,12 +87,14 @@ export default function App() {
       const animesAtualizados = animes.map((anime, indice) => {
         if (indiceEditando === indice) {
           anime.nome = nomeAnime;
+          anime.genero = generoAnime;
           anime.imagemUrl = imagemUrlAnime;
         }
         return anime;
       });
 
       setAnimes(animesAtualizados);
+
       setEditando(false);
       setIndiceEditando(null);
       limpaInput();
@@ -94,6 +104,7 @@ export default function App() {
 
   const limpaInput = () => {
     setNomeAnime("");
+    setGeneroAnime("")
     setUrlAnime("");
   };
 
@@ -106,6 +117,7 @@ export default function App() {
       ...animes,
       {
         nome: nomeAnime,
+        genero: generoAnime,
         imagemUrl: imagemUrlAnime,
       },
     ]);
@@ -122,7 +134,6 @@ export default function App() {
     editando ? editaAnime() : Adiciona();
   };
 
-  const [formularioAtivo, ativaFormulario] = useState(false)
 
   
 
@@ -174,7 +185,7 @@ export default function App() {
         <form onSubmit={adicionaAnime} className="formulario">
           <input
             type="text"
-            placeholder="digite o nome do anime"
+            placeholder="Nome do anime"
             value={nomeAnime}
             onChange={(evento) => {
               atualizarNomeAnime(evento);
@@ -182,9 +193,19 @@ export default function App() {
           />
           <br />
 
+          <input 
+            type="text"
+            placeholder="Genero"
+            value={generoAnime}
+            onChange= { (evento) => {
+              atualizaGeneroAnime(evento);
+
+            }}
+          />
+
           <input
             type="text"
-            placeholder="digite a url da capa"
+            placeholder="Url da capa"
             value={imagemUrlAnime}
             onChange={(evento) => {
               atualizarUrlAnime(evento);
