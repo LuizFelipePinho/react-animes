@@ -55,9 +55,10 @@ body {
 }
 
 .formulario input {
-  width: 20rem;
+  width: 26rem;
   height: 1.7rem;
   border: none;
+  margin: 0.3rem;
   
 }
 
@@ -70,6 +71,8 @@ input:focus{
 } 
 
 
+
+
 .formulario button {
   margin-top: 0.3rem;
   padding: 0.2rem;
@@ -78,6 +81,8 @@ input:focus{
   background-color: rgba(195, 195, 231, 0.582);
   color: rgba(51, 51, 204, 0.774);
   border: none;
+  cursor: pointer;
+
 
 }
 
@@ -105,12 +110,26 @@ input:focus{
   color: rgba(51, 51, 204, 0.774);
 }
 
+.botoes button:hover {
+    background-color: rgba(91, 236, 91, 0.747);
+    cursor: pointer;
+
+}
+
 .adicionaAnime {
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 1.2rem;
   font-size: 1rem;
   background-color: rgba(91, 236, 91, 0.747);
   color:black;
   border: none;
+
+}
+
+.adicionaAnime:hover {
+  background-color: rgba(195, 195, 231, 0.582);
+  color: rgba(51, 51, 204, 0.774);
+  cursor: pointer;
+
 
 }

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import "./components/layout/card/Card.css";
-// import Card from "./components/layout/card/Card.jsx";
 import Cabecalho from "./components/layout/header/Cabecalho";
 
 export default function App() {
@@ -211,7 +209,6 @@ export default function App() {
               atualizarNomeAnime(evento);
             }}
           />
-          <br />
 
           <input 
             type="text"
