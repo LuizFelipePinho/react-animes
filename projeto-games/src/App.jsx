@@ -76,9 +76,12 @@ export default function App() {
         return anime;
       });
 
+
+
       setAnimes(animesAtualizados);
       setEditando(false);
       setIndiceEditando(null);
+      limpaInput();
     }
   };
 
@@ -87,7 +90,7 @@ export default function App() {
     setUrlAnime("");
   };
 
-  const verificaEAdiciona = () => {
+  const Adiciona = () => {
     setAnimes([
       ...animes,
       {
@@ -101,7 +104,7 @@ export default function App() {
   const adicionaAnime = (evento) => {
     evento.preventDefault();
 
-    editando ? editaAnime() : verificaEAdiciona();
+    editando ? editaAnime() : Adiciona();
   };
 
   return (
