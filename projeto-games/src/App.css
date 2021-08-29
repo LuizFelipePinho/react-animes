@@ -1,40 +1,13 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background-color: rgba(235, 230, 230, 0.473);
 }
 
 
@@ -42,4 +15,100 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
+
+}
+
+
+.Box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 17rem;
+  width: 14rem;
+  padding: 0.5rem;
+  margin-top: 2rem;
+
+}
+
+.Box img {
+  width: 70%;
+  height: 70%;
+  border-radius: 10%;
+}
+
+.Box h3 {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.formulario {
+  margin-top: 5rem;
+  margin-left: 4rem;
+  text-align: center;
+  
+}
+
+.formulario input {
+  width: 20rem;
+  height: 1.5rem;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+input:focus{
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  border-bottom:  rgba(51, 51, 204, 0.774) solid 1px;
+
+  outline: 0;
+} 
+
+
+.formulario button {
+  margin-top: 0.3rem;
+  padding: 0.2rem;
+  border-radius: 10%;
+  text-align: center;
+  background-color: rgba(195, 195, 231, 0.582);
+  color: rgba(51, 51, 204, 0.774);
+  border: none;
+
+}
+
+.genero {
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 0.2rem;
+}
+
+.botoes{
+  margin-top: 0.7rem;
+  text-align: center;
+  border-radius: 10%;
+  
+
+}
+
+.botoes button {
+  padding: 0.1rem;
+  border: none;
+  margin: 0.2rem;
+  background-color: rgba(195, 195, 231, 0.582);
+  padding: 0.2rem;
+  border-radius: 10%;
+  color: rgba(51, 51, 204, 0.774);
+}
+
+.adicionaAnime {
+  margin-top: 5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: rgba(91, 236, 91, 0.747);
+  color:black;
+  border: none;
+
 }

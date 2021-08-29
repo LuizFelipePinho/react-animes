@@ -6,14 +6,13 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 5rem;
-  border: solid 2px black;
 }
 
 .logo {
   width: 10rem;
-  height: 4rem;
+  height: 3rem;
 }
 
 .opcoes li {
