@@ -44,6 +44,7 @@ export default function App() {
   useEffect(() => {
 
     if (indiceEditando !== null && editando) {
+      ligarBotao(false)
       setNomeAnime(animes[indiceEditando].nome);
       setGeneroAnime(animes[indiceEditando].genero)
       setUrlAnime(animes[indiceEditando].imagemUrl);
@@ -99,7 +100,8 @@ export default function App() {
       setEditando(false);
       setIndiceEditando(null);
       limpaInput();
-      ativaFormulario(false)
+      ativaFormulario(false);
+      ligarBotao(true)
     }
   };
 
@@ -123,6 +125,9 @@ export default function App() {
       },
     ]);
     limpaInput();
+    ligarBotao(true)
+    ativaFormulario(false)
+
 
    }
 
