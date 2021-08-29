@@ -46,6 +46,8 @@ body {
 
 
 .formulario {
+  display: flex;
+  flex-direction: column;
   margin-top: 5rem;
   margin-left: 4rem;
   text-align: center;
@@ -54,9 +56,9 @@ body {
 
 .formulario input {
   width: 20rem;
-  height: 1.5rem;
+  height: 1.7rem;
   border: none;
-  margin-bottom: 0.5rem;
+  
 }
 
 input:focus{

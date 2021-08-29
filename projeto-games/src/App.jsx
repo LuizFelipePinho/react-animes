@@ -42,6 +42,7 @@ export default function App() {
 
   // ele fica ouvindo se editar foi acionado, se for ele vai devolver para o input o elemento q foi selecionado
   useEffect(() => {
+
     if (indiceEditando !== null && editando) {
       setNomeAnime(animes[indiceEditando].nome);
       setGeneroAnime(animes[indiceEditando].genero)
@@ -134,6 +135,9 @@ export default function App() {
     editando ? editaAnime() : Adiciona();
   };
 
+  const [botaoAdicionaLigado, ligarBotao] = useState(true)
+
+
 
   
 
@@ -176,8 +180,19 @@ export default function App() {
       
       <div className="Container " >
        
-        <button className="adicionaAnime" onClick={ () => ativaFormulario(true)}>Adicione um novo anime</button>
+      { botaoAdicionaLigado ? 
+      <button className="adicionaAnime" onClick={ () => { 
+        ativaFormulario(true)
+        ligarBotao(false)} }>Adicione um novo anime</button>
+      : console.log("botao desativado")
+    
+      } 
       
+      
+
+
+
+
       {
         formularioAtivo ?  
         <div >
